@@ -14,6 +14,9 @@ import { useTheme } from '../context/ThemeContext';
 function CodeEditor(props) {
   const URL = props.URL;
   const [prompt, setPrompt] = useState(props.prompt || '');
+  const actionLabel = props.actionLabel || 'Review';
+  const panelTitle = props.panelTitle || 'Review Results';
+  const emptyStateMessage = props.emptyStateMessage || 'Enter your code and click "Review" to get optimization suggestions';
   const [copyText, setCopyButtonText] = useState(true);
   const [review, setReview] = useState('');
   const [optimisedCode, setOptimisedCode] = useState('');
@@ -205,7 +208,7 @@ function CodeEditor(props) {
               </>
             ) : (
               <>
-                <FaCheck className="mr-2" /> Review
+                <FaCheck className="mr-2" /> {actionLabel}
               </>
             )}
           </button>
@@ -218,7 +221,7 @@ function CodeEditor(props) {
           <div className={`px-4 py-2 ${
             isDark ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-800'
           } flex justify-between items-center`}>
-            <span className="font-medium">Review Results</span>
+            <span className="font-medium">{panelTitle}</span>
             {lang && (
               <button
                 onClick={handleCopyClick}
@@ -286,7 +289,7 @@ function CodeEditor(props) {
             ) : (
               <div className="flex flex-col items-center justify-center h-full text-center">
                 <FaCode className="text-4xl mb-4 opacity-50" />
-                <p className="text-lg opacity-70">Enter your code and click "Review" to get optimization suggestions</p>
+                <p className="text-lg opacity-70">{emptyStateMessage}</p>
               </div>
             )}
           </div>

@@ -134,6 +134,22 @@ const analyzeSecurity = async (req, res) => {
     }
 }
 
+const explainCode = async (req, res) => {
+    try {
+        const { code, language, prompt } = req.body;
+        const inputCode = code || prompt;
+        if (!inputCode) {
+            return res.status(400).send("Code is required");
+        }
+
+        const response = await aiService.explainCode(inputCode, language);
+        res.send(response);
+    } catch (error) {
+        console.error("Error in explainCode:", error);
+        res.status(500).send("An error occurred while explaining the code");
+    }
+}
+
 module.exports = {
     getReview,
     getCode,
@@ -144,4 +160,5 @@ module.exports = {
     debugCode,
     analyzePerformance,
     analyzeSecurity,
+    explainCode,
 }

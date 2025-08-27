@@ -103,7 +103,8 @@ function NavBar({ isMenuOpen, setIsMenuOpen }) {
       "/error-debugger",
       "/performance-analyzer",
       "/content-summarizer",
-      "/security-scanner"
+      "/security-scanner",
+      "/code-explanation"
     ];
     return toolsPaths.some((path) => location.pathname === path);
   };
@@ -274,7 +275,8 @@ function NavBar({ isMenuOpen, setIsMenuOpen }) {
                         { to: "/error-debugger", icon: FaBug, label: "Error Debugger", color: "red" },
                         { to: "/performance-analyzer", icon: FaTachometerAlt, label: "Performance Analyzer", color: "yellow" },
                         { to: "/content-summarizer", icon: FaAlignLeft, label: "Content Summarizer", color: "purple" },
-                        { to: "/security-scanner", icon: FaShieldAlt, label: "Security Scanner", color: "red" }
+                        { to: "/security-scanner", icon: FaShieldAlt, label: "Security Scanner", color: "red" },
+                        { to: "/code-explanation", icon: FaAlignLeft, label: "Code Explanation", color: "cyan" }
                       ].map((item) => (
                         <Link
                           key={item.to}
@@ -531,7 +533,8 @@ function NavBar({ isMenuOpen, setIsMenuOpen }) {
                   { to: "/error-debugger", icon: FaBug, label: "Error Debugger", color: "red" },
                   { to: "/performance-analyzer", icon: FaTachometerAlt, label: "Performance Analyzer", color: "yellow" },
                   { to: "/content-summarizer", icon: FaAlignLeft, label: "Content Summarizer", color: "purple" },
-                  { to: "/security-scanner", icon: FaShieldAlt, label: "Security Scanner", color: "red" }
+                  { to: "/security-scanner", icon: FaShieldAlt, label: "Security Scanner", color: "red" },
+                  { to: "/code-explanation", icon: FaAlignLeft, label: "Code Explanation", color: "cyan" }
                 ].map((item) => (
                   <Link
                     key={item.to}

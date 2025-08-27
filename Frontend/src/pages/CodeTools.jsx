@@ -8,7 +8,8 @@ import {
   FaBug,
   FaTachometerAlt,
   FaArrowRight,
-  FaFileAlt,FaShieldAlt
+  FaFileAlt,FaShieldAlt,
+  FaAlignLeft
 } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
 
@@ -111,6 +112,14 @@ function CodeTools() {
             title="Content Summarizer"
             description="Upload media files (images, PDFs, videos, text) and get AI-generated summaries of their content."
             link="/content-summarizer"
+            isDark={isDark}
+          />
+
+          <ToolCard
+            icon={<FaAlignLeft className="text-cyan-400 text-2xl" />}
+            title="Code Explanation"
+            description="Paste code to get a clear, structured explanation: overview, flow, and key details."
+            link="/code-explanation"
             isDark={isDark}
           />
 
