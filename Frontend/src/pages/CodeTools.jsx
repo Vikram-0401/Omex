@@ -124,13 +124,12 @@ function CodeTools() {
           />
 
           <ToolCard
-  icon={<FaShieldAlt
- className="text-red-500 text-2xl" />}  // use FaShieldAlt for security
-  title="Security Vulnerability Scanner"
-  description="Scan your code for security flaws like SQL injection, XSS, and hardcoded secrets with remediation suggestions."
-  link="/security-scanner"
-  isDark={isDark}
-/>
+            icon={<FaShieldAlt className="text-red-500 text-2xl" />}
+            title="Security Vulnerability Scanner"
+            description="Scan your code for security flaws like SQL injection, XSS, and hardcoded secrets with remediation suggestions."
+            link="/security-scanner"
+            isDark={isDark}
+          />
 
         </div>
 
